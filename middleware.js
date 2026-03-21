@@ -22,14 +22,8 @@ export const saveurl = (req, res, next) => {
 export const owneracess = async (req, res, next) => {
   const { id } = req.params;
   const listing = await Listing.findById(id);
-
-  if (!res.locals.currUser) {
-    req.flash("error", "Your session has expired. Please log in again.");
-    return res.redirect("/login");
-  }
-
-  if (!listing.owner.equals(res.locals.currUser._id)) {
-    req.flash("error", "You are not the owner of this listing");
+  if (!listing.owner.equals(res.locals.currentUser._id)) {
+    req.flash("error", "you are not owner of the list");
     return res.redirect(`/listings/${id}`);
   }
   next();
