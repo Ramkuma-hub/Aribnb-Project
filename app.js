@@ -43,9 +43,9 @@ const sessionConfig = {
   resave: false,
   saveUninitialized: true,
   cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000, // 7 days from now
+    maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 1000 * 60 * 60 * 24 * 7,
   },
 };
 app.use(session(sessionConfig));
