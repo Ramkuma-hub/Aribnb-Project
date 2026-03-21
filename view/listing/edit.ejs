@@ -1,6 +1,6 @@
 <% layout('/layout/boilerplate.ejs') -%>
 
-    <body>
+<body>
         <h1>EDIT LISTING</h1>
         <form action="/listings/<%= listing._id %>" method="POST" novalidate class="needs-validation" enctype="multipart/form-data" >
             <div class="row">
@@ -35,10 +35,8 @@
                                 <div class="invalid-feedback">
                                     Please provide a country name.
                              </div>
-
-                    </div>
-
-                    <div class="mb-3"> <label for="location" class="form-label">Location</label> <input type="text"
+                             </div>
+                             <div class="mb-3"> <label for="location" class="form-label">Location</label> <input type="text"
                             name="listing[location]" value="<%= listing.location %>" class="form-control" required>
                             <div class="invalid-feedback">
                                 Please provide a location .
@@ -48,22 +46,14 @@
                     Original Listing Image <br>
                   <img src="<%= originalimageurl %>">
                     </div>
-                   
-                   <div class="mb-3"> 
+                     <div class="mb-3"> 
                     <label for="image" class="form-label">Upload New Image </label> 
                     <input type="file" name="listing[image]" class="form-control">
                     </div>
-
-                </div>
-                                    
-
-            </div>
+                    </div>
+                    </div>
             </div>
             <button class="btn btn-dark add-btn ">Update Listing</button>
             <br><br>
-
-        </form>
-
-    </body>
-
-    </html>
+            </form>
+            </body></html>

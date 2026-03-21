@@ -28,7 +28,7 @@ router.get("/new", loggedIn, wrapAsync(getnewlisting));
 router
     .route("/:id")
     .get(wrapAsync(showlistingdata))
-    .post(loggedIn, upload.single("listing[image]"), owneracess, wrapAsync(postupdatedata))
+    .post(loggedIn, owneracess, upload.single("listing[image]"), wrapAsync(postupdatedata))
     .delete(loggedIn, owneracess, wrapAsync(destroylist));
 
 // update data
