@@ -27,13 +27,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 const AtlasUrl = process.env.Atlas_url;
-<<<<<<< HEAD
 const secretkey =process.env.Secret
-=======
-const secretkey = process.env.secret;
-
->>>>>>> 55ae59b (Initial commit2)
-
 const store = MongoStore.create({
   mongoUrl: AtlasUrl,
   crypto: {
