@@ -26,11 +26,12 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 const AtlasUrl = process.env.Atlas_url;
+const secretkey =process.env.Secret
 
 const store = MongoStore.create({
   mongoUrl: AtlasUrl,
   crypto: {
-    secret: process.env.Secret,
+    secret: secretkey,
   },
   touchAfter: 24 * 3600,
 });
