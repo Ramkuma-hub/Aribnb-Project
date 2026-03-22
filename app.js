@@ -40,7 +40,7 @@ store.on("error", () => {
 });
 const sessionConfig = {
   store,
-  secret: :secretkey ,
+  secret:secretkey ,
   resave: false,
   saveUninitialized: true,
   cookie: {
