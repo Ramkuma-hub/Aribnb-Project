@@ -1,8 +1,6 @@
 import User from "../model/user.js";
 
-
-
-export const getsignup =  (req, res) => {
+export const getsignup = (req, res) => {
     res.render("users/signup.ejs")
 
 
@@ -23,9 +21,9 @@ export const getlogin = (req, res) => {
     res.render("users/login.ejs")
 }
 
-export const postlogin =  async (req, res) => {
+export const postlogin = async (req, res) => {
     req.flash("success", "Logged in Successfully");
-    res.redirect( res.locals.redirectUrl || "/listings");
+    res.redirect(res.locals.redirectUrl || "/listings");
 }
 
 export const logout = (req, res) => {

@@ -17,6 +17,7 @@ import MongoStore from "connect-mongo";
 import dotenv from "dotenv";
 dotenv.config();
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -26,7 +27,12 @@ app.use(methodOverride("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
 const AtlasUrl = process.env.Atlas_url;
+<<<<<<< HEAD
 const secretkey =process.env.Secret
+=======
+const secretkey = process.env.secret;
+
+>>>>>>> 55ae59b (Initial commit2)
 
 const store = MongoStore.create({
   mongoUrl: AtlasUrl,
@@ -40,7 +46,11 @@ store.on("error", () => {
 });
 const sessionConfig = {
   store,
+<<<<<<< HEAD
   secret:secretkey ,
+=======
+  secret: secretkey,
+>>>>>>> 55ae59b (Initial commit2)
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -64,6 +74,7 @@ app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   next();
 });
+
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("", userRouter);

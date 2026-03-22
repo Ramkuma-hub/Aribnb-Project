@@ -1,5 +1,7 @@
 import Listing from "../model/listing.js";
 
+
+
 export const index = async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listing/index.ejs", { allListings });
