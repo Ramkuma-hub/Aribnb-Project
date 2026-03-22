@@ -46,11 +46,7 @@ store.on("error", () => {
 });
 const sessionConfig = {
   store,
-<<<<<<< HEAD
-  secret:secretkey ,
-=======
-  secret: secretkey,
->>>>>>> 55ae59b (Initial commit2)
+  secret:secretkey,
   resave: false,
   saveUninitialized: true,
   cookie: {
